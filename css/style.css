@@ -1,0 +1,368 @@
+@charset "UTF-8";
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #544D4D;
+}
+.sec-title{
+    text-align: center;
+    font-size: 3vw;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+/*header
+---------------------------------*/
+#header{
+    background-color: #efeae8;
+    width: 100vw;
+    height: 53vmax;
+   
+}
+#header .logo img{
+    margin: 20px 0 0 20px;
+    width: 45%;
+}
+#header nav{
+    position: fixed;
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-bottom: 100px;
+}
+#header .list{
+    font-size: 2.5vw;
+    margin-bottom: 20px;
+    
+}
+#header .list li{
+    width: 80%;
+    padding-left: 15px;
+    padding-top:10px;
+    border-bottom: 2px solid #c9a588;
+}
+#header .list li:hover{
+    opacity: 0.8;
+}
+#header .sns_list{
+    display: flex;
+}
+#header .sns_list li{
+    margin-right: 15px;
+}
+#header .sns_list img{
+    width: 4vw;
+}
+.mainvisual{
+    position:absolute;
+    top: 100px;
+    left: 60%;
+    
+}
+.mainvisual img{
+    width: 70%;
+    height:100%;
+    object-fit: cover;
+}
+.mainvisual div{
+    position: absolute;
+    top: 60%;
+    left: -15%;
+    display: block;
+    width: 25vw;
+    height: 2.8vmax;
+    background-color: rgb(190, 146, 117,0.56);
+}
+.mainvisual .catch_copy{
+    position: absolute;
+    top:62%;
+    left: -13%;
+    text-align: center;
+    padding-top: 0.5%;
+    font-size: 1.5vw;
+    width: 25vw;
+    height: 2.8vmax;
+    background-color: rgb(255, 255, 255,0.56);
+}
+/*main
+-------------------------------------*/
+main section{
+   padding-left: 25%;
+}
+#news{
+    padding-bottom: 50px;
+    width: 100vw;
+    background-color: #e2d2c4;
+}
+#news ul{
+    margin-bottom: 20px;
+}
+#news li{
+    width: 80%;
+    margin-left: 40px;
+    padding:20px 0px 10px 50px;
+    font-size: 2vw;
+    border-bottom: 5px solid #efeae8;
+}
+/*movie
+----------------*/
+#movie{
+    width: 100vw;
+    background-color: #efeae8;
+}
+.youtube_movie{
+    display: flex;
+    flex-wrap: wrap;
+}
+.youtube_link{
+    padding: 0 30px;
+   margin: 0 auto 50px auto;
+}
+.youtube_link iframe{
+    width: 23vmax;
+    height: 15vmax;
+}
+.youtube_link p{
+    font-size: 1vw;
+}
+/*profile
+----------------------------*/
+#profile {
+    background-color: #e2d2c4;
+    width: 100vw;
+}
+#profile img{
+    width: 20vmax;
+    height: 30vmax;
+    object-fit: cover;
+    display: block;
+    margin: 15px 30px;
+}
+#profile .fle{
+    display: flex;
+}
+.profile_text{
+    width: 50%;
+}
+.profile_text .myui{
+    font-size: 2.3vw;
+    margin: 70px 0 70px 30px;
+}
+.keireki{
+    font-size: 3.5vw;
+    font-weight: 15px;
+    border-bottom: 4px solid #efeae8;
+    margin-bottom: 10px;
+}
+.keireki_text p{
+    font-size: 2vw;
+    padding-bottom: 20px;
+}
+/*SNS
+--------------------------*/
+#sns{
+    width: 100vw;
+    background-color: #efeae8;
+}
+.sns_link{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sns_link div{
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.twitter-tweet{
+    transform: scale(0.9);
+}
+/*works
+-------------------------------------*/
+#works{
+    background-color: #E5D4C7;
+    width: 100vw;
+    height: 40vmax;
+}
+.works_link iframe{
+    width: 25vmax;
+    height: 15vmax;
+}
+.works_link p{
+    font-size: 1.3vw;
+}
+/*footer
+-------------------------------------*/
+#footer{
+    text-align: center;
+    background-color: #E5D4C7;
+}
+@media screen and (max-width:600px){
+    /*header
+    ----------------------------------*/
+    #header{
+        height: 60vh;
+    }
+    /*mainvisual
+    ------------------------*/
+    .mainvisual{
+        left: 30%;
+    }
+    .mainvisual img{
+        width: 50%;
+        height: 50%;
+    }
+    /*nav
+    ---------------------------*/
+    #header nav{
+        padding-left: 0px;
+        margin-left: 0px;
+        opacity: 0;
+        z-index: -1;
+        top: 0;
+        left:0;
+        width:100%;
+        height: 100vh;/*ナビの高さ*/
+        background:rgb(178,156, 132);
+        /*動き*/
+        transition: all 0.6s;
+    }
+    #header .list{
+        font-size: 6vw;
+    }
+    #header .list li{
+        width: 100%;
+    }
+    #header .sns_list img{
+        width: 8vw;
+    }
+    #navi .navi_list{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+           transform: translate(-50%,-50%);
+    }
+    #header nav.panelactive{
+        opacity: 1;
+        z-index: 999;
+    }
+      /*openbtn
+---------------------------------*/
+.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+position: absolute;
+    top: 15px;
+    left: 80%;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
+    z-index: 999;
+}
+
+/*ボタン内側*/
+.openbtn .openbtn-area{
+    transition: all .6s;/*アニメーションの設定*/
+	width:50px;
+	height:50px;
+}
+
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background: #2b2b2b;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+/*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+.openbtn.active .openbtn-area{
+	transform: rotate(360deg);
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+/*main
+--------------------------*/
+main section{
+    padding-left: 0%;
+}
+/*news
+--------------------*/
+#news li{
+    margin: 0 auto 20px auto;
+    font-size: 4vw;
+    padding: 0px;
+}
+/*profile
+-----------------------------*/
+#profile div{
+    margin: 0 auto;
+}
+#profile img{
+    margin:10px auto;
+}
+#profile .fle{
+    display: block;
+}
+.profile_text .myui{
+    margin: 20px 0;
+    font-size: 5vw;
+}
+.keireki{
+    font-size: 7vw;
+}
+.keireki_text p{
+    font-size: 4vw;
+}
+    /*SNS
+    ------------------------------*/
+    #sns{
+        padding-bottom: 20px;
+    }
+    .sns_link div{
+        padding: 0px;
+        width: 80%;
+    }
+    .instagram-media{
+        min-width: 100% !important;
+        margin: 0 -1px !important;
+        border-right: none !important;
+        border-left: none !important;
+    }
+    /*work
+    ---------------------------------*/
+    .works_link{
+        text-align: center;
+    }
+}
